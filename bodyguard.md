@@ -75,8 +75,8 @@ while (true) {}
 For the Agent's attack to hit, we need to teleport it to the monster.
 
 Try this: <br>
-``||mobs:teleport||`` ``||variable:cm||`` <br>
-``||mobs:to my Agent||``
+``||mobs:teleport my Agent||`` <br>
+``||mobs:to||`` ``||variable:cm||``
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
@@ -84,7 +84,7 @@ let cm = mobs.target(ALL_ENTITIES)
 cm.addRule("family", "monster")
 cm.addRule("c", "1")
 while (true) {
-    mobs.teleportToPlayer(cm, mobs.target(MY_AGENT))
+    mobs.teleportToPlayer(mobs.target(MY_AGENT), cm)
 }
 ```
 
