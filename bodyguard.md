@@ -91,7 +91,7 @@ while (true) {
 
 ## Make the Agent attack
 
-This is the final step! We just need to the Agent to attack.
+This is the final step! We just need the Agent to attack.
 
 Simply, ``||agent:agent attack forward||``.
 
