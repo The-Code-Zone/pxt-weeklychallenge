@@ -4,18 +4,20 @@
 
 First, we need to create a variable to find the closest monster.
 
-Make a new variable, and name it ``||variable:cm|``.
+Make a new variable, and name it ``||variable:closest_monster|``.
+
+Hint: You could choose a different name!
 
 
 ## Find the closest monster
 
-Next up, ``||loops:on start||``, we need to set the variable ``||variable:cm|`` to ``||mobs:all entities||``.
+Next up, ``||loops:on start||``, we need to set the variable ``||variable:closest_monster|`` to ``||mobs:all entities||``.
 
 Don't forget to check the hint if you get stuck! <br>
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-cm = mobs.target(ALL_ENTITIES)
+closest_monster = mobs.target(ALL_ENTITIES)
 ```
 
 
@@ -26,15 +28,15 @@ Now we have a variable that finds all entities. But we want it to only find mons
 Find this block: <br>
 ``||variable:selector ▼||`` ``||mobs:add rule||``
 
-Add it to the code, then change the variable to ``||variable:cm|``.
+Add it to the code, then change the variable to ``||variable:closest_monster|``.
 
 Finally, change the values to say:
 `"family"` ``||mobs:equals||`` `"monster"`
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-let cm = mobs.target(ALL_ENTITIES)
-cm.addRule("family", "monster")
+let closest_monster = mobs.target(ALL_ENTITIES)
+closest_monster.addRule("family", "monster")
 ```
 
 
@@ -43,15 +45,15 @@ cm.addRule("family", "monster")
 Our variable now finds all monsters, but it should find only the closest one.
 
 Let's add another rule, just like in the previous step, but this time it will say: <br>
-``||variable:cm ▼||`` ``||mobs:add rule||`` `"c"` ``||mobs:equals||`` `"1"`
+``||variable:closest_monster ▼||`` ``||mobs:add rule||`` `"c"` ``||mobs:equals||`` `"1"`
 
 `"c"` is short for "closest."
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-let cm = mobs.target(ALL_ENTITIES)
-cm.addRule("family", "monster")
-cm.addRule("c", "1")
+let closest_monster = mobs.target(ALL_ENTITIES)
+closest_monster.addRule("family", "monster")
+closest_monster.addRule("c", "1")
 ```
 
 
@@ -63,9 +65,9 @@ We want the agent to attack forever, so first of all let's add a ``||loops:while
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-let cm = mobs.target(ALL_ENTITIES)
-cm.addRule("family", "monster")
-cm.addRule("c", "1")
+let closest_monster = mobs.target(ALL_ENTITIES)
+closest_monster.addRule("family", "monster")
+closest_monster.addRule("c", "1")
 while (true) {}
 ```
 
@@ -76,15 +78,15 @@ For the Agent's attack to hit, we need to teleport it to the monster.
 
 Try this: <br>
 ``||mobs:teleport my Agent||`` <br>
-``||mobs:to||`` ``||variable:cm||``
+``||mobs:to||`` ``||variable:closest_monster||``
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-let cm = mobs.target(ALL_ENTITIES)
-cm.addRule("family", "monster")
-cm.addRule("c", "1")
+let closest_monster = mobs.target(ALL_ENTITIES)
+closest_monster.addRule("family", "monster")
+closest_monster.addRule("c", "1")
 while (true) {
-    mobs.teleportToPlayer(mobs.target(MY_AGENT), cm)
+    mobs.teleportToPlayer(mobs.target(MY_AGENT), closest_monster)
 }
 ```
 
@@ -97,11 +99,11 @@ Simply, ``||agent:agent attack forward||``.
 
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
-let cm = mobs.target(ALL_ENTITIES)
-cm.addRule("family", "monster")
-cm.addRule("c", "1")
+let closest_monster = mobs.target(ALL_ENTITIES)
+closest_monster.addRule("family", "monster")
+closest_monster.addRule("c", "1")
 while (true) {
-    mobs.teleportToPlayer(cm, mobs.target(MY_AGENT))
+    mobs.teleportToPlayer(closest_monster, mobs.target(MY_AGENT))
     agent.attack(FORWARD)
 }
 ```
