@@ -55,7 +55,7 @@ Change the animal type to ``||mobs:Strider||``.
 ```blocks
 loops.forever(function () {
     while (true) {
-        position = entities.positionOf(mobs.entitiesByType(STRIDER))
+        let position = entities.positionOf(mobs.entitiesByType(STRIDER))
     }
 })
 ```
@@ -66,12 +66,12 @@ Add this block: <br>
 ``||blocks:replace with||`` ``||blocks:lava||`` <br>
 ``||blocks:when block is||`` ``||blocks:air||`` <br>
 ``||blocks:from||`` ``||variables:position||`` <br>
-``||blocks:to||`` ``||position||``
+``||blocks:to||`` ``||variables:position||``
 
 ```blocks
 loops.forever(function () {
     while (true) {
-        position = entities.positionOf(mobs.entitiesByType(STRIDER))
+        let position = entities.positionOf(mobs.entitiesByType(STRIDER))
         blocks.replace(LAVA, AIR, position, position)
     }
 })
@@ -89,7 +89,7 @@ mobs.give(mobs.target(LOCAL_PLAYER), WARPED_FUNGUS_ON_A_STICK, 1)
 mobs.give(mobs.target(LOCAL_PLAYER), SADDLE, 1)
 loops.forever(function () {
     while (true) {
-        position = entities.positionOf(mobs.entitiesByType(STRIDER))
+        let position = entities.positionOf(mobs.entitiesByType(STRIDER))
         blocks.replace(LAVA, AIR, position, position)
     }
 })
