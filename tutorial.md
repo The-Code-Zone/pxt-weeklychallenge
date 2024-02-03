@@ -4,6 +4,8 @@
 
 Here is some text.
 
+![spawn animal](/static/spawn.png)
+
 &nbsp;&nbsp;&nbsp;⬇
 ```blocks
 position = entities.positionOf(mobs.entitiesByType(STRIDER))
