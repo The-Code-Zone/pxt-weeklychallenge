@@ -2,7 +2,7 @@
 
 ## Summon a Strider
 
-``||loops:on start||``, use ``||mobs:spawn animal||`` to summon a Strider.
+``||loops:on start||``, use ``||mobs:spawn animal||`` to summon a ``||mobs:Strider||``.
 
 ```blocks
 mobs.spawn(STRIDER, pos(0, 0, 0))
@@ -22,7 +22,7 @@ mobs.give(mobs.target(LOCAL_PLAYER), WARPED_FUNGUS_ON_A_STICK, 1)
 
 Use ``||mobs:give||`` and ``||blocks:item||`` to give yourself a ``||blocks:Saddle||``.
 <br><br>
-(Try doing right-click and "Duplicate" on the previous code!)
+(Try doing **right-click** and "Duplicate" on the previous code!)
 
 ```blocks
 mobs.spawn(STRIDER, pos(0, 0, 0))
@@ -32,7 +32,7 @@ mobs.give(mobs.target(LOCAL_PLAYER), SADDLE, 1)
 
 ## Start a new bit of code
 
-The new bit starts with <br>
+Start with: <br>
 ``||loops:forever||`` <br>
 ``||loops:while||`` ``||logic:true||``.
 
@@ -79,8 +79,18 @@ loops.forever(function () {
 
 ## Now ride the Strider!
 
-The code is complete!
+**You did it!** Now, put the **saddle** on the **Strider** and ride it. 
 <br><br>
-Put the saddle on the Strider and ride it. 
-<br><br>
-Use the Warped Fungus on a Stick to control where the Strider goes.
+Use the **Warped Fungus on a Stick** to control where the Strider goes.
+
+```blocks
+mobs.spawn(STRIDER, pos(0, 0, 0))
+mobs.give(mobs.target(LOCAL_PLAYER), WARPED_FUNGUS_ON_A_STICK, 1)
+mobs.give(mobs.target(LOCAL_PLAYER), SADDLE, 1)
+loops.forever(function () {
+    while (true) {
+        position = entities.positionOf(mobs.entitiesByType(STRIDER))
+        blocks.replace(LAVA, AIR, position, position)
+    }
+})
+```
