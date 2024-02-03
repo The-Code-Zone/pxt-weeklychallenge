@@ -9,7 +9,8 @@
     "files": [
         "entities.ts",
         "tutorial.md",
-        "bodyguard.md"
+        "bodyguard.md",
+        "strider.md"
     ],
     "testFiles": [],
     "public": true,
