@@ -1,4 +1,4 @@
-let position = Pos(0, 0, 0)
+let position = pos(0, 0, 0)
 
 //% weight=65 color=#764bcc icon="\uf06c"
 namespace entities {
