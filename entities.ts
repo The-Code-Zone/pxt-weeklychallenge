@@ -1,4 +1,4 @@
-//% weight=65 color=300 icon="\uf06c"
+//% weight=65 color=#A55BA5 icon="\uf06c"
 namespace entities {
 
     // --- Queries ---
