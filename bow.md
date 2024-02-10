@@ -27,7 +27,7 @@ Add this line: <br>
 
 ```blocks
 player.onArrowShot(function () {
-    mobs.spawn(PRIMED_TNT, pos(0, 0, 0)
+    mobs.spawn(PRIMED_TNT, pos(0, 0, 0))
     entites.tag(entities.nearest(ARROW_PROJECTILE_MOB), "tnt")
 })
 ```
