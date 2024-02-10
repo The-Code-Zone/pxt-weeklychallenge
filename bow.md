@@ -23,12 +23,12 @@ player.onArrowShot(function () {
 
 Add this line: <br>
 ``||entities:apply tag||`` ``tnt`` ``||entities:to||`` <br>
-``||entites:nearest||`` ``||mobs:arrow||``
+``||entities:nearest||`` ``||mobs:arrow||``
 
 ```blocks
 player.onArrowShot(function () {
     mobs.spawn(PRIMED_TNT, pos(0, 0, 0))
-    entites.tag(entities.nearest(ARROW_PROJECTILE_MOB), "tnt")
+    entities.tag(entities.nearest(ARROW_PROJECTILE_MOB), "tnt")
 })
 ```
 
