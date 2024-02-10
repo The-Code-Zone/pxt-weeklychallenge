@@ -10,8 +10,7 @@
         "entities.ts",
         "bodyguard.md",
         "strider.md",
-		"bow.md",
-		"docs/static/bow.png"
+        "bow.md"
     ],
     "testFiles": [],
     "public": true,
