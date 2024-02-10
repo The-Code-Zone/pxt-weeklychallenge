@@ -1,5 +1,5 @@
 {
-    "name": "tutorial",
+    "name": "Weekly Challenge",
     "version": "0.0.1",
     "description": "Developed by Amitai",
     "license": "MIT",
@@ -8,9 +8,10 @@
     },
     "files": [
         "entities.ts",
-        "tutorial.md",
         "bodyguard.md",
-        "strider.md"
+        "strider.md",
+		"bow.md",
+		"docs/static/bow.png"
     ],
     "testFiles": [],
     "public": true,
