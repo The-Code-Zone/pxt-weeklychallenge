@@ -5,7 +5,7 @@
 Let's make a bow that shoots explosive TNT arrows! <br>
 In this tutorial we'll make 3 separate bits of code.
 
-![Code](/static/bow.png)
+![Code](https://raw.githubusercontent.com/amg-12/pxt-tutorial/main/docs/static/bow.png)
 
 ## When we shoot an arrow, spawn TNT
 
