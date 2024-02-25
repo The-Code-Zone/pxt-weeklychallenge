@@ -17,10 +17,10 @@ Build this code: <br>
 ``||player:on||`` ``||blocks:Clock||`` ``||player:used||`` <br>
 `­ ­` ``||logic:if||`` ``||variables:enabled||`` <br>
 `­ ­ ­ ­` ``||variables:set enabled to||`` ``||logic:false||`` <br>
-`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE ON` <br>
+`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE OFF` <br>
 `­ ­` ``||logic:else||`` <br>
 `­ ­ ­ ­` ``||variables:set enabled to||`` ``||logic:true||`` <br>
-`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE OFF`
+`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE ON`
 
 ```blocks
 player.onItemInteracted(CLOCK, function () {
