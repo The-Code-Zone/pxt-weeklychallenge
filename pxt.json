@@ -10,7 +10,8 @@
         "entities.ts",
         "bodyguard.md",
         "strider.md",
-        "bow.md"
+        "bow.md",
+        "timemachine.md"
     ],
     "testFiles": [],
     "public": true,
