@@ -17,19 +17,19 @@ Build this code: <br>
 ``||player:on||`` ``||blocks:Clock||`` ``||player:used||`` <br>
 `­ ­` ``||logic:if||`` ``||variables:enabled||`` <br>
 `­ ­ ­ ­` ``||variables:set enabled to||`` ``||logic:false||`` <br>
-`­ ­ ­ ­` ``||interface:message||`` `TIME MACHINE ON` <br>
+`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE ON` <br>
 `­ ­` ``||logic:else||`` <br>
 `­ ­ ­ ­` ``||variables:set enabled to||`` ``||logic:true||`` <br>
-`­ ­ ­ ­` ``||interface:message||`` `TIME MACHINE OFF`
+`­ ­ ­ ­` ``||display:message||`` `TIME MACHINE OFF`
 
 ```blocks
 player.onItemInteracted(CLOCK, function () {
     if (enabled) {
         enabled = false
-        interface.showMessage("TIME MACHINE OFF")
+        display.showMessage("TIME MACHINE OFF")
     } else {
         enabled = true
-        interface.showMessage("TIME MACHINE ON")
+        display.showMessage("TIME MACHINE ON")
     }
 })
 ```

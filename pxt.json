@@ -8,7 +8,7 @@
     },
     "files": [
         "entities.ts",
-        "interface.ts",
+        "display.ts",
         "bodyguard.md",
         "strider.md",
         "bow.md",

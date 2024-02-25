@@ -1,5 +1,5 @@
 //% weight=60 color=#FEC000 icon="\uf075"
-namespace interface {
+namespace display {
 
     //% block
     //% message.defl="Hello"
