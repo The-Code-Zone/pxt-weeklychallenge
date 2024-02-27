@@ -49,7 +49,7 @@ loops.forever(function () {
 
 ## Do some time machine maths
 
-Add this code: <br>
+Add this code to the script from last step: <br>
 
 ``||variables:set time to||`` ``||math:270 -||`` ``||player: player orientation||`` <br>
 ``||variables:set time to||`` ``||math:66.66 x||`` ``||variables:time||`` <br>
