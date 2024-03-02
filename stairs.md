@@ -35,7 +35,8 @@ Add this code to the <br>
 `­ ­` ``||builder:place||`` ``||blocks:Cobblestone Slab||`` <br>
 `­ ­` ``||builder:builder move forward by ||`` `1` <br>
 `­ ­` ``||builder:place||`` ``||blocks:Cobblestone Block||`` <br>
-`­ ­` ``||builder:builder move forward||`` `1` ``||builder:up||`` `1` <br>
+`­ ­` ``||builder:builder move||`` <br>
+`­ ­ ­ ­` ``||builder:forward||`` `1` ``||builder:up||`` `1` ``||builder:left||`` `0` <br>
 `­ ­` ``||builder:builder turn right||``
 
 
