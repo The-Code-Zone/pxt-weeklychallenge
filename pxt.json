@@ -13,7 +13,9 @@
         "bodyguard.md",
         "strider.md",
         "bow.md",
-        "timemachine.md"
+        "timemachine.md",
+        "stairs.md"
+
     ],
     "testFiles": [],
     "public": true,
