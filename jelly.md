@@ -54,7 +54,7 @@ function slime_pad (x: number, y: number, z: number) {
 
 ``||player:on chat command||`` `build` <br>
 `­ ­` ``||variables:set height to||`` `250` <br>
-`­ ­` ``||loops:repeat||`` `18` ``||loops:times||`` <br>
+`­ ­` ``||loops:repeat||`` `19` ``||loops:times||`` <br>
 `­ ­ ­ ­` ``||functions:call slime pad||`` <br>
 `­ ­ ­ ­ ­ ­` ``||math:pick random||`` `0` ``||math:to||`` `10` <br>
 `­ ­ ­ ­ ­ ­` ``||variables:height||`` <br>
@@ -68,7 +68,7 @@ function slime_pad (x: number, y: number, z: number) {
 ```blocks
 player.onChat("build", function () {
     height = 250
-    for (let index = 0; index < 18; index++) {
+    for (let index = 0; index < 19; index++) {
         slime_pad(randint(0, 10), height, randint(0, 10))
         height += -10
     }
