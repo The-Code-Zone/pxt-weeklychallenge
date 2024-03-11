@@ -14,7 +14,9 @@ Create a variable called ``||variables:height||``.
 
 ## Make a new function
 
-Create a ``||functions:slime pad||`` function with **3** Number parameters ``||functions:x||`` ``||functions:y||`` and ``||functions:z||``.
+Create a ``||functions:slime pad||`` function with **3** Number parameters ``||x||`` ``||y||`` and ``||z||``. <br>
+
+``||functions:Functions||`` are inside the **Advanced** tab.
 
 ![Function](https://raw.githubusercontent.com/amg-12/pxt-tutorial/main/docs/static/slimepad.png) <br>
 add **3** Number parameters 
