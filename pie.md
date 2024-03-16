@@ -10,7 +10,7 @@ Let's make our Agent farm ingredients for a pumpkin pie!
 
 ## Create a harvest function
 
-``||functions:harvest||`` <br>
+``||functions:function harvest||`` <br>
 `­ ­` ``||agent:agent turn right||`` <br>
 `­ ­` ``||agent:agent move forward by 2||`` <br>
 
