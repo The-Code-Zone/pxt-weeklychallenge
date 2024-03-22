@@ -18,6 +18,22 @@ namespace entities {
 
     // -- Selectors --
 
+    //% block blockId=nearestEntity
+    //% group=Selectors weight=90
+    export function nearestEntity(): TargetSelector {
+        let target = mobs.target(ALL_ENTITIES)
+        target.addRule("name", "!" + player.name())
+        target.addRule("c", "1")
+        return target
+    }
+
+    //% block="$target=minecraftTarget with tag %tag"
+    //% group=Selectors weight=80
+    export function targetWithTag(target: TargetSelector, tag: string): TargetSelector {
+        target.addRule("tag", tag)
+        return target
+    }
+
     //% block="nearest $type=minecraftAnimal"
     //% group=Selectors weight=60
     export function nearest(type: number) {
