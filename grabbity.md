@@ -79,4 +79,76 @@ player.onItemInteracted(BLAZE_ROD, function () {
 
 ## Hold the wand and right-click mobs to pick them up
 
-Return **Mr. Piddlesworth** to Jim!
+Return **Mr. Piddlesworth** to Jim! <br> <br>
+
+Or **keep following the tutorial** to add **bonus enhancements** to your grabbity wand.
+
+## Bonus step: Accuracy
+
+At the top of your ``||loops:on start||`` script, add this line: <br>
+``||variables:set selector to||`` <br>
+`­ ­` ``||entities:nearest entity||`` <br>
+
+Then, inside the ``||loops:while||`` ``||logic:true||`` loop, add this line: <br>
+``||variables:selector||`` ``||mobs:set coordinate||`` <br>
+`­ ­` ``||positions:^ 0 ^ 1 ^ 5||`` ``||positions:to world||`` <br>
+
+Finally, in your ``||player:on||`` ``||blocks:item||`` ``||player:used||`` script, replace both instances of ``||entities:nearest player||`` with ``||variables:selector||``.
+
+This step will **improve the accuracy** of your grabbity wand, so you can always pick up the right mob.
+
+```blocks
+player.onItemInteracted(BLAZE_ROD, function () {
+    if (on) {
+        on = false
+        entities.untag(mobs.target(ALL_ENTITIES), "g")
+    } else {
+        on = true
+        entities.tag(selector, "g")
+        display.showMessage(selector.toString())
+    }
+})
+let selector = entities.nearestEntity()
+while (true) {
+    selector.atCoordinate(posLocal(0, 1, 5).toWorld())
+    mobs.teleportToPosition(
+    entities.targetWithTag(mobs.target(ALL_ENTITIES), "g"),
+    posLocal(0, 2, 3)
+    )
+}
+```
+
+## Bonus step: Multiplayer
+
+Replace all 3 instances of the tag `"g"` in your code with ``||player:player name||``. <br>
+
+This step will allow your grabbity gun to **work in a multiplayer game**.
+
+```blocks
+player.onItemInteracted(BLAZE_ROD, function () {
+    if (on) {
+        on = false
+        entities.untag(mobs.target(ALL_ENTITIES), player.name())
+    } else {
+        on = true
+        entities.tag(selector, player.name())
+        display.showMessage(selector.toString())
+    }
+})
+let selector = entities.nearestEntity()
+while (true) {
+    selector.atCoordinate(posLocal(0, 1, 5).toWorld())
+    mobs.teleportToPosition(
+    entities.targetWithTag(mobs.target(ALL_ENTITIES), player.name()),
+    posLocal(0, 2, 3)
+    )
+}
+```
+
+## Bonus step: Sounds
+
+After clicking **Done**, click on **Extensions** and select the **Music** extension. <br>
+
+Use it to **add sounds** when you pick mobs up and put them down!
+
+![Bonus](https://raw.githubusercontent.com/amg-12/pxt-tutorial/main/docs/static/grabbitybonus.png)
