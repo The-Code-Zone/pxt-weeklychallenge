@@ -93,7 +93,7 @@ Then, inside the ``||loops:while||`` ``||logic:true||`` loop, add this line: <br
 ``||variables:selector||`` ``||mobs:set coordinate||`` <br>
 `­ ­` ``||positions:^ 0 ^ 1 ^ 5||`` ``||positions:to world||`` <br>
 
-Finally, in your ``||player:on||`` ``||blocks:item||`` ``||player:used||`` script, replace both instances of ``||entities:nearest player||`` with ``||variables:selector||``.
+Finally, in your ``||player:on||`` ``||blocks:item||`` ``||player:used||`` script, replace both instances of ``||entities:nearest entity||`` with ``||variables:selector||``.
 
 This step will **improve the accuracy** of your grabbity wand, so you can always pick up the right mob.
 
