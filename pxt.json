@@ -1,5 +1,5 @@
 {
-    "name": "Weekly Challenge",
+    "name": "The Code Zone",
     "version": "0.0.1",
     "description": "Developed by Amitai",
     "license": "MIT",
@@ -17,7 +17,9 @@
         "stairs.md",
         "jelly.md",
         "pie.md",
-        "grabbity.md"
+        "grabbity.md",
+        "parrots.md",
+        "pigs.md"
     ],
     "testFiles": [],
     "public": true,
