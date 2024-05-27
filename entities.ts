@@ -1,3 +1,12 @@
+enum Slot {
+    Head,
+    Chest,
+    Legs,
+    Feet,
+    Mainhand,
+    Offhand
+}
+
 //% weight=65 color=#A55BA5 icon="\uf06c"
 namespace entities {
 
@@ -62,6 +71,27 @@ namespace entities {
     //% group=Tagging weight=80
     export function untag(target: TargetSelector, tag: string) {
         player.execute(`tag ${target} remove ${tag}`)
+    }
+
+    // --- Equipment ---
+
+    function getSlot(slot: Slot): string {
+        switch(slot) {
+            case Slot.Head:     return "slot.armor.head"
+            case Slot.Chest:    return "slot.armor.chest"
+            case Slot.Legs:     return "slot.armor.legs"
+            case Slot.Feet:     return "slot.armor.feet"
+            case Slot.Mainhand: return "slot.weapon.mainhand"
+            case Slot.Offhand:  return "slot.weapon.offhand"
+        }
+    }
+
+    //% block="put %itemId=minecraftItem on %slot of %target"
+    //% group=Equipment weight=90
+    //% target.shadow=minecraftTarget
+    export function replaceItem(itemId: number, slot: Slot, target: TargetSelector) {
+        let itemName = blocks.nameOfBlock(itemId).replace(" ", "_")
+        player.execute(`replaceitem entity ${target} ${getSlot(slot)} 1 ${itemName}`)
     }
 
 }
