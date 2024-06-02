@@ -1,6 +1,13 @@
-# PVE
+# Crypt of Chaos
 
-## Hello
+## Game Instructions
+
+- Place **levers** to **open doors**.
+- **Break redstone torches** to **stop monsters** from spawning.
+- Find and defeat the **boss**.
+- Click on **Start**, then open the **chat with T** and say "start" to start.
+
+Look at the next steps to **hack the game**!
 
 ```template
 function setup_world () {
@@ -28,6 +35,7 @@ function setup_world () {
     1
     )
 }
+
 function spawn_boss () {
     mobs.spawn(mobs.monster(WITHER_SKELETON), boss_location)
     entities.replaceItem(GOLDEN_HELMET, Slot.Head, mobs.entitiesByType(mobs.monster(WITHER_SKELETON)))
@@ -45,6 +53,7 @@ function spawn_boss () {
     "effect @e[type=wither_skeleton] instant_damage 1 255"
     )
 }
+
 player.onChat("start", function () {
     gameplay.setGameMode(
     SURVIVAL,
@@ -56,6 +65,7 @@ player.onChat("start", function () {
         spawn_enemy(room2)
     }
 })
+
 loops.forever(function () {
     loops.pause(2000)
     position = world(0, 0, 0)
@@ -64,11 +74,13 @@ loops.forever(function () {
     }
     spawn_enemy(position)
 })
+
 function spawn_enemy (position: Position) {
     if (blocks.testForBlock(REDSTONE_TORCH, position)) {
         mobs.spawn(monster_pool._pickRandom(), position)
     }
 }
+
 function setup_constants () {
     room_locations = [
     world(370, 97, -377),
@@ -87,5 +99,42 @@ function setup_constants () {
     ]
     monster_pool = [mobs.monster(ZOMBIE), mobs.monster(SKELETON), mobs.monster(CAVE_SPIDER)]
 }
+
+let monster_pool: number[] = []
+let position: Position = null
+let boss_location: Position = null
+let chest_location: Position = null
+let lever_locations: Position[] = []
+let room_locations: Position[] = []
+let monsters: TargetSelector = null
 setup_constants()
+```
+
+## Hack #1: Get a Sword
+
+**Find** this script: <br>
+``||loops:on start||`` <br>
+``||functions:call setup_constants||`` <br>
+
+Find these blocks and **add them to the script**: <br>
+``||mobs:give yourself block or item||`` <br>
+``||blocks:item Netherite Sword||``
+
+```blocks
+call setup_constants()
+mobs.give(mobs.target(NEAREST_PLAYER), NETHERITE_SWORD, 1)
+```
+
+## Hack #2: Become Invincible
+
+**Build** this script: <br>
+``||loops:forever||`` <br>
+``||mobs:apply 💓 Regeneration to yourself||`` <br>
+
+Set the amplifier to `255`.
+
+```blocks
+loops.forever(function () {
+    mobs.applyEffect(REGENERATION, mobs.target(LOCAL_PLAYER), 10, 255)
+})
 ```
