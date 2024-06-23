@@ -21,7 +21,8 @@
         "parrots.md",
         "pigs.md",
         "pve.md",
-        "scaffold.md"
+        "scaffold.md",
+        "maze.md"
     ],
     "testFiles": [],
     "public": true,
