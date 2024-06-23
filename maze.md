@@ -39,7 +39,7 @@ setup_dictionary()
 
 Find the ``||loops:on start||`` script. <br>
 
-Add ``||loops:while true||`` to the script.
+Add ``||loops:while true||`` to the end of the script.
 
 ```blocks
 call_setup_dictionary
