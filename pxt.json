@@ -20,7 +20,8 @@
         "grabbity.md",
         "parrots.md",
         "pigs.md",
-        "pve.md"
+        "pve.md",
+        "scaffold.md"
     ],
     "testFiles": [],
     "public": true,
