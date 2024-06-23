@@ -52,18 +52,33 @@ while (true) {
 
 Add this inside of your ``||logic:if||`` statement: <br>
 
-``||blocks:place Scaffold at||`` <br>
-``||variables:pos||`` <br>
-``||positions:+ ~0 ~1 ~0||``
+``||variables:set pos to||`` <br>
+``||variables:pos||`` ``||positions:+ ~0 ~1 ~0||``
 
 ```blocks
 while (true) {
     pos = player.position()
     if (blocks.testForBlock(SCAFFOLDING, pos)) {
-        blocks.place(SCAFFOLDING, positions.add(
-        pos,
-        pos(0, 1, 0)
-        ))
+        pos = positions.add(pos, pos(0, 1, 0))
+    }
+}
+```
+
+## Step 6
+
+Add this inside of your ``||logic:if||`` statement: <br>
+
+``||blocks:replace with Scaffold||`` <br>
+``||blocks:when block is Air||`` <br>
+``||blocks:from||`` ``||variables:pos||`` <br>
+``||blocks:to||`` ``||variables:pos||``
+
+```blocks
+while (true) {
+    pos = player.position()
+    if (blocks.testForBlock(SCAFFOLDING, pos)) {
+        pos = positions.add(pos, pos(0, 1, 0))
+        blocks.replace(SCAFFOLDING, AIR, pos, pos)
     }
 }
 ```
