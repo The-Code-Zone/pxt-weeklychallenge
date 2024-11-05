@@ -1,15 +1,13 @@
 {
-    "name": "The Code Zone",
-    "version": "0.0.1",
+    "name": "Weekly Challenge",
+    "version": "1.0.0",
     "description": "Developed by Amitai",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "extensions": "github:The-Code-Zone/pxt-mc-extensions#v1.0.0"
     },
     "files": [
-        "main.blocks",
-        "entities.ts",
-        "display.ts",
         "bodyguard.md",
         "strider.md",
         "bow.md",
